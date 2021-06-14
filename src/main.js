@@ -1,4 +1,6 @@
 import {refresh as refreshSnake, display as displaySnake, snakeSpeed} from './snake.js'
+import {refresh as refreshApple, display as displayApple} from './apple.js'
+
 
 let prevRenderTime = 0
 const game = document.getElementById('game')
@@ -18,9 +20,11 @@ window.requestAnimationFrame(main)
 
 function refresh() {
     refreshSnake()
+    refreshApple()
 }
 
 function display() {
     game.innerHTML = ""
     displaySnake(game)
+    displayApple(game)
 }
