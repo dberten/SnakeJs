@@ -4,6 +4,7 @@ import {outOfMap} from './map.js'
 
 let prevRenderTime = 0
 const game = document.getElementById('game')
+const scoreBox = document.getElementById('score')
 let lose = false
 
 function main(currTime) {
@@ -31,7 +32,8 @@ function refresh() {
 
 function display() {
     game.innerHTML = ""
-    game.innerHTML += "<B>score: </B>" + score
+    scoreBox.innerHTML = ""
+    scoreBox.innerHTML += "<p>SCORE: " + score + "</p>"
     displaySnake(game)
     displayApple(game)
 }

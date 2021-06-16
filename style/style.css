@@ -1,6 +1,11 @@
+@font-face {
+    font-family: 'omegaflight';
+    src: url('../font/omega_flight/omegaflight.ttf');
+}
+
 body {
     height: 100vh;
-    width: 100wh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,4 +30,17 @@ body {
 .apple {
     background-color:hsl(350, 100%, 50%);
     border: .25vmin solid black;
+}
+
+#score {
+    width: 20vmin;
+    height: 20vmin;
+    background-color: green;
+    border: 20px solid black;
+    margin-left: 300px;
+}
+
+#score p {
+    text-align: center;
+    font-family: omegaflight;
 }
