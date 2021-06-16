@@ -1,7 +1,8 @@
 import {getInput} from './manageInput.js'
 
+export let score = 0
 export const snakeSpeed = 5
-const snakeList = [{x:10, y:11}]
+const snakeList = [{x:11, y:11}]
 let newPart = 0
 
 export function refresh() {
@@ -27,14 +28,28 @@ export function growSnake(nb) {
     newPart += nb
 }
 
-export function isSnakeGrow(pos) {
-    return snakeList.some(part => {
+export function isSnakeGrow(pos, {ignoreFirst = false} = {}) {
+    return snakeList.some((part, i) => {
+        if (ignoreFirst &&  i === 0)
+            return false
         return equalPos(part, pos)
     })
 }
 
+export function getPosSnake() {
+    return snakeList[0]
+}
+
+export function snakeQueue() {
+    return (isSnakeGrow(snakeList[0], {ignoreFirst:true}))
+}
+
 function equalPos(pos1, pos2) {
-    return (pos1.x === pos2.x && pos1.y === pos2.y)
+    if (pos1.x === pos2.x && pos1.y === pos2.y) {
+        score += 1
+        return true
+    }
+    return false
 }
 
 function addPart() {

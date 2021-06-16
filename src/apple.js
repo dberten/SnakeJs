@@ -1,4 +1,4 @@
-import {isSnakeGrow, growSnake} from './snake.js'
+import {growSnake, isSnakeGrow} from './snake.js'
 import {randGridPos} from './map.js'
 
 let apple = getRandPosApple()
